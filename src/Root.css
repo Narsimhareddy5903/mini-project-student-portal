@@ -1,0 +1,78 @@
+input.custom-cursor {
+  caret-color: transparent;
+}
+
+body {
+  background-image: linear-gradient(
+    to bottom left,
+    var(--tw-gradient-stops)
+  );
+  --tw-gradient-from: #000
+    var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0)
+    var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from),
+    var(--tw-gradient-to);
+
+  background-color: #4a525f;
+
+  /* Ensure gradient covers the entire viewport */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: makes the background stationary */
+}
+
+td,
+th {
+  border: 1px solid rgb(70, 70, 70);
+}
+
+/* Add a pseudo-element for the custom blinking cursor */
+input.custom-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: black;
+  animation: blink 1s step-end infinite;
+  position: absolute;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Position the custom cursor */
+input.custom-cursor {
+  position: relative;
+}
+
+span.token.operator {
+  background-color: transparent !important;
+}
+
+.p-sidebar-header {
+  display: none;
+}
+
+.p-sidebar.p-component.p-ripple-disabled.p-sidebar-enter-done {
+  border-radius: 14px 14px 0 0;
+}
+
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.graph_container {
+  border: 1px solid slategray;
+  border-radius: 10px;
+  padding: 1.25rem;
+}
